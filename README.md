@@ -1,4 +1,4 @@
-# DataFusion-App-Python 
+# DataFusion-App-Python  
 
 > 🚀 **Powerful Data Analysis and Machine Learning GUI Application** - Build comprehensive data science platforms with Python, PySimpleGUI, and advanced analytics capabilities
 
