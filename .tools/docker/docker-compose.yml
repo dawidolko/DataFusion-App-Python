@@ -1,3 +1,5 @@
+name: datafusion-project
+
 services:
   app:
     build:
