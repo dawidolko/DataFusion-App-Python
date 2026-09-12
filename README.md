@@ -1,301 +1,120 @@
-# DataFusion-App-Python
+# DataFusion
 
-> 🚀 **Powerful Data Analysis and Machine Learning GUI Application** - Build comprehensive data science platforms with Python, PySimpleGUI, and advanced analytics capabilities
+> 📊 **A CSV workbench that runs on the desktop** — load, clean, encode, scale and plot a dataset without writing a line of pandas
 
-## 📋 Description
+**DataFusion** is a desktop application for the part of data science that comes before the model: opening a file, finding out what is wrong with it, and fixing it. Load a CSV or one of the two bundled UCI datasets, read the statistics, fill or drop the missing values, encode the categorical columns, scale the numeric ones, and draw the chart that shows whether any of it worked.
 
-Welcome to the **DataFusion App** repository! This user-friendly Python GUI application provides a comprehensive environment for real-world data analysis and machine learning. The application processes two distinct datasets: the UCI Adult Income dataset and the UCI Chronic Kidney Disease dataset, offering users powerful tools for data exploration, cleaning, transformation, statistical analysis, and predictive modeling.
+Every transformation happens on a working copy, and one button puts the original data back — so exploring destructively is safe.
 
-Built with PySimpleGUI for an intuitive interface and leveraging industry-standard libraries like Pandas, Scikit-learn, Matplotlib, and Seaborn, this project demonstrates best practices in data science workflows, GUI development, and modular application architecture. Perfect for learning data analysis, machine learning algorithms, and building interactive data science applications.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![PySimpleGUI](https://img.shields.io/badge/PySimpleGUI-desktop-5A9FD4)
+![pandas](https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikitlearn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.8%2B-11557C?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## 📁 Repository Structure
+---
 
-```
+## 🎯 Key Features
 
-DataFusion-App-Python/
-├── 📁 database/ # Raw datasets
-│ ├── 📊 adult.csv # UCI Adult Income Dataset
-│ ├── 📊 chronic.csv # UCI Chronic Kidney Disease Dataset
-│ └── 📖 README.md # Dataset documentation
-├── 📁 docs/ # Project documentation
-│ ├── 📝 description.docx # Detailed project description
-│ ├── 📚 user-guide.pdf # User manual
-│ └── 🔬 analysis-report.pdf # Analysis results
-├── 📁 src/ # Application source code
-│ ├── 🎯 main.py # GUI entry point and main application
-│ ├── 📦 data_handler.py # Data loading and processing
-│ ├── 📊 visualization.py # Plotting and visualization
-│ ├── 🤖 ml_models.py # Machine learning algorithms
-│ ├── 📈 statistics.py # Statistical analysis functions
-│ ├── 🧹 preprocessing.py # Data cleaning and transformation
-│ ├── 🖼️ assets/ # Application assets
-│ │ └── screen-app.png # Application screenshot
-│ └── 📋 requirements.txt # Python dependencies
-├── 📄 LICENSE # MIT License
-└── 📖 README.md # Project documentation
+- **Undo is a first-class button** — the original frame is kept beside the working one, so any cleaning step can be reversed without reloading the file.
+- **Descriptive statistics on demand** — count, mean, spread, plus skewness and kurtosis from SciPy, which are the two that actually tell you whether a distribution will behave.
+- **Both correlation matrices, side by side** — Pearson and Spearman together, because a monotonic relationship that is not linear is exactly what one of them hides.
+- **Missing values handled by strategy, not by hand** — pick a strategy and it is applied to the frame; duplicates are removed the same way.
+- **Three encodings for categorical columns** — one-hot, binary and target encoding, chosen per column rather than applied blindly to everything.
+- **Scaling on selected columns** — standard or min-max, applied to the columns you choose, so an identifier column is not scaled along with the measurements.
+- **Five chart types, each configurable** — histogram, box plot, bar chart, line plot and pie chart, drawn with Matplotlib into the window and saveable as an image.
+- **Sub-tables by row and column index** — extract or exclude a slice and keep working on it.
+- **Two datasets included** — UCI Adult and Chronic Kidney Disease, ready to open without hunting for a file.
 
-```
+---
+
+## 🖼️ Screenshots
+
+| The main view                                       | Descriptive statistics                               |
+| --------------------------------------------------- | ---------------------------------------------------- |
+| ![The DataFusion main window with a loaded dataset](src/assets/main_view.png) | ![Descriptive statistics for the loaded frame](src/assets/data_stats.png) |
+
+| Cleaning and transformation                          | Correlation matrices                                 |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| ![Missing values, duplicates and encoding controls](src/assets/data_cleaning_transformation.png) | ![Pearson and Spearman side by side](src/assets/correlation_results.png) |
+
+| Charts                                               | Scaling results                                      |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| ![Histogram, box plot and the other chart types](src/assets/data_visualizations.png) | ![Columns after standard and min-max scaling](src/assets/scaling_results.png) |
+
+---
+
+## 📚 Bundled Datasets
+
+| Dataset                      | Rows   | What it is                                           |
+| ---------------------------- | ------ | ---------------------------------------------------- |
+| **UCI Adult**                | 48 842 | Census data; the classic income-prediction benchmark. |
+| **Chronic Kidney Disease**   | 400    | Clinical measurements in ARFF, with many missing values — which is the point of loading it. |
+
+Both live in `database/`, with their original `.names` and `.info` files, so the column meanings are not lost.
+
+---
+
+## 🛠️ Technology Stack
+
+| Technology       | Version | Role                                                        |
+| ---------------- | ------- | ----------------------------------------------------------- |
+| **PySimpleGUI**  | —       | The window, tabs, tables and dialogs.                        |
+| **pandas**       | 2.0+    | The data frame everything operates on.                       |
+| **NumPy**        | —       | Numeric operations underneath.                               |
+| **scikit-learn** | 1.3+    | `StandardScaler` and `MinMaxScaler`.                         |
+| **SciPy**        | —       | Skewness and kurtosis.                                       |
+| **Matplotlib**   | 3.8+    | Charts, embedded in the window through `FigureCanvasTkAgg`.  |
+| **Pillow**       | —       | Icons and image export.                                      |
+
+---
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### Prerequisites
+
+- Python 3.10 or newer
+- Tkinter available in the interpreter (it ships with most CPython builds)
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/dawidolko/DataFusion-App-Python.git
 cd DataFusion-App-Python
 ```
 
-### 2. Create Virtual Environment
+### 2. Install dependencies
 
 ```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# On Linux/macOS:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
+pip install PySimpleGUI pandas numpy scikit-learn scipy matplotlib pillow
 ```
 
-### 3. Install Dependencies
+### 3. Run
 
 ```bash
-# Install required packages
-pip install -r src/requirements.txt
-```
-
-### 4. Start the Application
-
-```bash
-# Run the main application
 python src/main.py
 ```
 
-- The GUI application will launch automatically
-
-## ⚙️ System Requirements
-
-### **Essential Tools:**
-
-- **Python** (version 3.8 or higher)
-- **pip** package manager
-- **Virtual environment** (venv or virtualenv)
-- **Git** for version control
-
-### **Development Environment:**
-
-- **Code Editor** (VS Code, PyCharm, Sublime Text)
-- **Python Debugger** for development
-- **Jupyter Notebook** (optional, for data exploration)
-
-### **Required Python Libraries:**
-
-- **PySimpleGUI** - GUI framework
-- **Pandas** - Data manipulation and analysis
-- **NumPy** - Numerical computing
-- **Scikit-learn** - Machine learning algorithms
-- **Matplotlib** - Data visualization
-- **Seaborn** - Statistical data visualization
-- **Scipy** - Scientific computing
-
-### **Recommended Tools:**
-
-- **Git** for version control
-- **Python Linter** (pylint, flake8)
-- **Black** for code formatting
-- **pytest** for testing
-
-## ✨ Key Features
-
-### **🖥️ Interactive GUI Interface**
-
-- Simple and intuitive PySimpleGUI-based interface
-- Perform complex data operations without coding
-- User-friendly menu navigation
-- Real-time operation feedback
-- Progress indicators for long-running tasks
-
-### **📊 Data Extraction and Transformation**
-
-- Load multiple dataset formats (CSV, Excel, JSON)
-- Handle missing data with multiple strategies
-- Data normalization and standardization
-- Encode categorical variables (one-hot, label encoding)
-- Feature engineering and creation
-- Data type conversion and validation
-
-### **📈 Statistical Analysis**
-
-- Calculate descriptive statistics (mean, median, mode, standard deviation)
-- Quartiles and percentiles analysis
-- Correlation matrix generation
-- Distribution analysis and testing
-- Hypothesis testing capabilities
-- Outlier detection and handling
-
-### **🤖 Machine Learning Algorithms**
-
-#### **Classification Models:**
-
-- **Decision Trees** - Rule-based classification
-- **k-Nearest Neighbors (k-NN)** - Instance-based learning
-- **Logistic Regression** - Probabilistic classification
-- Model evaluation with accuracy, precision, recall, F1-score
-- Confusion matrix visualization
-
-#### **Clustering:**
-
-- **K-Means Clustering** - Unsupervised grouping
-- Elbow method for optimal cluster selection
-- Cluster visualization and analysis
-- Silhouette score evaluation
-
-#### **Association Rules:**
-
-- **Apriori Algorithm** - Pattern discovery
-- Frequent itemset mining
-- Rule generation with confidence and support
-- Market basket analysis
-
-### **📊 Data Visualization**
-
-- **Histograms** - Distribution visualization
-- **Scatter Plots** - Relationship exploration
-- **Box Plots** - Statistical summary visualization
-- **Heatmaps** - Correlation matrices
-- **Bar Charts** - Categorical data comparison
-- **Line Graphs** - Trend analysis
-- Interactive plot customization
-- Export visualizations to image files
-
-### **🔧 Modular Architecture**
-
-- Clean separation of concerns
-- Easy to maintain and extend
-- Independent module testing
-- Reusable components
-- Well-documented code
-
-### **📚 Educational Focus**
-
-- Ideal for learning data science workflows
-- Real-world dataset examples
-- Complete analysis pipelines
-- Documented best practices
-- Step-by-step guided processes
-
-## 🛠️ Technologies Used
-
-- **Python 3.8+** - Core programming language
-- **PySimpleGUI** - GUI framework for desktop applications
-- **Pandas** - Data manipulation and analysis library
-- **NumPy** - Fundamental package for numerical computing
-- **Scikit-learn** - Machine learning library
-- **Matplotlib** - Comprehensive plotting library
-- **Seaborn** - Statistical data visualization
-- **Scipy** - Scientific computing tools
-
-## 📚 Datasets
-
-### **UCI Adult Income Dataset**
-
-Demographic and employment data for income classification tasks:
-
-- **Purpose:** Predict whether income exceeds $50K/year
-- **Features:** Age, workclass, education, occupation, hours per week, etc.
-- **Target:** Binary classification (>50K, <=50K)
-- **Records:** ~48,000 entries
-
-### **UCI Chronic Kidney Disease Dataset**
-
-Medical parameters for diagnosing chronic kidney disease:
-
-- **Purpose:** Binary classification of kidney disease presence
-- **Features:** Blood pressure, specific gravity, albumin, blood glucose, etc.
-- **Target:** CKD or not CKD
-- **Records:** 400 medical cases
-
-Both datasets are included in the `database/` directory with complete documentation.
-
-## 📖 Usage Guide
-
-### **1. Loading Data**
-
-Launch the application and select "Load Dataset" from the menu. Choose between:
-
-- Adult Income Dataset
-- Chronic Kidney Disease Dataset
-- Custom CSV file
-
-### **2. Data Exploration**
-
-Use the data exploration tools to:
-
-- View dataset summary and statistics
-- Check for missing values
-- Explore data distributions
-- Analyze feature correlations
-
-### **3. Data Preprocessing**
-
-Apply preprocessing operations:
-
-- Handle missing values (drop, fill, interpolate)
-- Normalize or standardize features
-- Encode categorical variables
-- Create new features
-
-### **4. Statistical Analysis**
-
-Generate statistical insights:
-
-- Calculate descriptive statistics
-- Create correlation matrices
-- Perform distribution tests
-- Identify outliers
-
-### **5. Machine Learning**
-
-Train and evaluate models:
-
-- Select algorithm (Classification/Clustering/Association Rules)
-- Configure model parameters
-- Train on dataset
-- Evaluate performance metrics
-- Visualize results
-
-### **6. Visualization**
-
-Create insightful visualizations:
-
-- Generate various plot types
-- Customize appearance
-- Export to image files
-- Compare multiple features
-
-## 🖼️ Application Screenshot
-
-[<img src="src/assets/screen-app.png" width="80%" alt="DataFusion App Interface"/>](src/assets/screen-app.png)
-
-## 🤝 Contributing
-
-Contributions are highly welcomed! Here's how you can help:
-
-- 🐛 **Report bugs** - Found an issue? Let us know!
-- 💡 **Suggest improvements** - Have ideas for better features?
-- 🔧 **Submit pull requests** - Share your enhancements and solutions
-- 📖 **Improve documentation** - Help make the project clearer
-
-Feel free to open issues or reach out through GitHub for any questions or suggestions.
-
-## 👨‍💻 Author
-
-Created by **[Dawid Olko](https://github.com/dawidolko)** - Part of the data science and machine learning series.
+The window opens with a start screen; **Go to data** loads either a bundled dataset or a CSV of your own.
+
+---
+
+## 📁 Project Structure
+
+```
+DataFusion-App-Python/
+├── src/
+│   ├── main.py             # the whole application: window, tabs, transformations, charts
+│   └── assets/             # icons and the screenshots used above
+├── database/
+│   ├── adult/              # UCI Adult: data, test split, column names
+│   └── chronic/            # Chronic Kidney Disease in ARFF, with its info file
+└── docs/                   # documentation, task descriptions
+```
+
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
-
----
+MIT © [Dawid Olko](https://dawidolko.pl)
