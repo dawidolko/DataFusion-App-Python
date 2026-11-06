@@ -1,4 +1,4 @@
-# Aplikacja okienkowa oparta na PySimpleGUI (Tkinter). Kontener zapewnia
+# Aplikacja okienkowa oparta na FreeSimpleGUI (Tkinter). Kontener zapewnia
 # powtarzalne srodowisko uruchomieniowe; okno wymaga serwera X z hosta —
 # patrz README.md w tym katalogu.
 FROM python:3.12-slim
@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Tkinter nie wchodzi w sklad obrazu slim, a PySimpleGUI bez niego nie ruszy.
+# Tkinter nie wchodzi w sklad obrazu slim, a FreeSimpleGUI bez niego nie ruszy.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-tk \
         tk \
@@ -18,10 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY src/requirements.txt ./requirements.txt
 
-# PySimpleGUI od wersji 5 jest dystrybuowany z wlasnego indeksu, dlatego
-# requirements.txt zawiera pelne polecenie pip zamiast nazwy pakietu.
 RUN pip install --no-cache-dir --upgrade pip \
-    && sh -c "$(cat requirements.txt)"
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY src/ ./src/
 

@@ -15,8 +15,8 @@
     "<img fetchpriority=\"high\" width=\"109\" height=\"20\" src=\"/assets/site/badge-python-3-10-2b-3776ab-b6856298.svg\" alt=\"Python\" />"
    ],
    [
-    "<img src=\"https://img.shields.io/badge/PySimpleGUI-desktop-5A9FD4\" alt=\"PySimpleGUI\" />",
-    "<img loading=\"lazy\" decoding=\"async\" width=\"136\" height=\"20\" src=\"/assets/site/badge-pysimplegui-desktop-5a9fd4-cdd74218.svg\" alt=\"PySimpleGUI\" />"
+    "<img src=\"https://img.shields.io/badge/FreeSimpleGUI-desktop-5A9FD4\" alt=\"FreeSimpleGUI\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"146\" height=\"20\" src=\"/assets/site/badge-freesimplegui-desktop-5a9fd4.svg\" alt=\"FreeSimpleGUI\" />"
    ],
    [
     "<img src=\"https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&amp;logoColor=white\" alt=\"pandas\" />",

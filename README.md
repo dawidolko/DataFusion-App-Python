@@ -7,7 +7,7 @@
 Every transformation happens on a working copy, and one button puts the original data back — so exploring destructively is safe.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
-![PySimpleGUI](https://img.shields.io/badge/PySimpleGUI-desktop-5A9FD4)
+![FreeSimpleGUI](https://img.shields.io/badge/FreeSimpleGUI-desktop-5A9FD4)
 ![pandas](https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikitlearn&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.8%2B-11557C?logo=python&logoColor=white)
@@ -60,7 +60,7 @@ Both live in `database/`, with their original `.names` and `.info` files, so the
 
 | Technology       | Version | Role                                                        |
 | ---------------- | ------- | ----------------------------------------------------------- |
-| **PySimpleGUI**  | —       | The window, tabs, tables and dialogs.                        |
+| **FreeSimpleGUI** | 5.1     | The window, tabs, tables and dialogs.                        |
 | **pandas**       | 2.0+    | The data frame everything operates on.                       |
 | **NumPy**        | —       | Numeric operations underneath.                               |
 | **scikit-learn** | 1.3+    | `StandardScaler` and `MinMaxScaler`.                         |
@@ -87,7 +87,7 @@ cd DataFusion-App-Python
 ### 2. Install dependencies
 
 ```bash
-pip install PySimpleGUI pandas numpy scikit-learn scipy matplotlib pillow
+pip install -r src/requirements.txt
 ```
 
 ### 3. Run
@@ -121,4 +121,4 @@ An accessibility panel in the corner of every page changes text size, contrast, 
 
 ## 📄 License
 
-MIT © [Dawid Olko](https://dawidolko.pl)
+The application code is MIT © [Dawid Olko](https://dawidolko.pl). Dependencies keep their own licences, listed in [CREDITS.md](CREDITS.md).

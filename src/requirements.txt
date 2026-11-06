@@ -1,1 +1,7 @@
-python -m pip install --force-reinstall --extra-index-url https://PySimpleGUI.net/install PySimpleGUI
+FreeSimpleGUI>=5.1,<6
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+pillow

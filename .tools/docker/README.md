@@ -1,6 +1,6 @@
 # Docker — DataFusion App (Python)
 
-Obraz zawiera Pythona 3.12 wraz z Tkinterem, ktorego wymaga PySimpleGUI.
+Obraz zawiera Pythona 3.12 wraz z Tkinterem, ktorego wymaga FreeSimpleGUI.
 Katalog `database/` jest zamontowany z hosta, wiec dane przezywaja restart
 kontenera.
 

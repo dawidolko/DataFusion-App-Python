@@ -15,7 +15,7 @@ This file serves as the complete guide to the DataFusion-App-Python project. It 
   - Data extraction from CSV files.
   - Data transformation modules for cleaning, normalization, and encoding.
   - Statistical and machine learning functionalities integrated within the application.
-  - The integration of the GUI built with PySimpleGUI and how it facilitates ease of use for users.
+  - The integration of the GUI built with FreeSimpleGUI and how it facilitates ease of use for users.
 
 - **Modules Overview:**  
   An explanation of each module (data extraction, transformation, statistical analysis, machine learning, and utility functions), detailing how they interact and contribute to the overall functionality of the application.
@@ -28,7 +28,7 @@ This file serves as the complete guide to the DataFusion-App-Python project. It 
   - Running machine learning models and viewing the outputs.
 
 - **Technologies and Tools:**  
-  Information about the key libraries and tools used in the project (e.g., PySimpleGUI for GUI development, pandas for data manipulation, scikit-learn for machine learning, matplotlib for visualization). Any necessary configuration details and versions of libraries used will also be listed.
+  Information about the key libraries and tools used in the project (e.g., FreeSimpleGUI for GUI development, pandas for data manipulation, scikit-learn for machine learning, matplotlib for visualization). Any necessary configuration details and versions of libraries used will also be listed.
 
 ## description_problems.docx
 
