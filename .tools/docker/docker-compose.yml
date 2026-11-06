@@ -10,6 +10,6 @@ services:
       - DISPLAY=${DISPLAY:-:0}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      # Baza i dane wejsciowe wspoldzielone z hostem.
+      # Database and input data shared with the host.
       - ../../database:/app/database
     network_mode: host

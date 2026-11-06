@@ -1,6 +1,6 @@
-# Aplikacja okienkowa oparta na FreeSimpleGUI (Tkinter). Kontener zapewnia
-# powtarzalne srodowisko uruchomieniowe; okno wymaga serwera X z hosta —
-# patrz README.md w tym katalogu.
+# Desktop application based on FreeSimpleGUI (Tkinter). The container provides
+# a repeatable runtime environment; the window needs an X server from the host -
+# see README.md in this directory.
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -8,7 +8,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Tkinter nie wchodzi w sklad obrazu slim, a FreeSimpleGUI bez niego nie ruszy.
+# Tkinter is not part of the slim image, and FreeSimpleGUI will not start
+# without it.
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-tk \
         tk \

@@ -29,13 +29,13 @@ def browse_for_csv_file():
 def set_window_icon(window, icon_path):
     try:
         if not os.path.exists(icon_path):
-            print(f"Plik ikony {icon_path} nie istnieje.")
+            print(f"Icon file {icon_path} does not exist.")
             if os.path.exists("assets/logo.png"):
                 icon_path = "assets/logo.png"
             elif os.path.exists("logo.png"):
                 icon_path = "logo.png"
             else:
-                print("Nie można znaleźć pliku ikony.")
+                print("Icon file not found.")
                 return
 
         root = window.TKroot
@@ -1257,7 +1257,7 @@ try:
         style = style & ~0x10000
         windll.user32.SetWindowLongW(hwnd, -16, style)
 except Exception as e:
-    print(f"Błąd podczas konfiguracji okna: {e}")
+    print(f"Window configuration error: {e}")
 
 while True:
     event, values = window.read()
