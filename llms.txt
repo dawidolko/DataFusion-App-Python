@@ -1,0 +1,11 @@
+# DataFusion
+
+> DataFusion is a Python desktop app that loads, cleans, encodes, scales and plots CSV datasets without code. Source, screenshots and setup guide.
+
+## Pages
+
+- [Project page](https://datafusion.dawidolko.pl/): Features, screenshots, bundled datasets, technology stack and setup steps.
+
+## Source
+
+- [GitHub repository](https://github.com/dawidolko/DataFusion-App-Python): Python source, documentation and example datasets.

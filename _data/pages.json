@@ -1,0 +1,63 @@
+{
+ "README.md": {
+  "label": "DataFusion",
+  "title": "DataFusion | Desktop CSV Workbench in Python",
+  "description": "DataFusion is a Python desktop app that loads, cleans, encodes, scales and plots CSV datasets without code. Source, screenshots and setup guide.",
+  "lang": "en",
+  "levels": [
+   "1>2",
+   "2>3",
+   "3>4"
+  ],
+  "swaps": [
+   [
+    "<img src=\"https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&amp;logoColor=white\" alt=\"Python\" />",
+    "<img fetchpriority=\"high\" width=\"109\" height=\"20\" src=\"/assets/site/badge-python-3-10-2b-3776ab-b6856298.svg\" alt=\"Python\" />"
+   ],
+   [
+    "<img src=\"https://img.shields.io/badge/PySimpleGUI-desktop-5A9FD4\" alt=\"PySimpleGUI\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"136\" height=\"20\" src=\"/assets/site/badge-pysimplegui-desktop-5a9fd4-cdd74218.svg\" alt=\"PySimpleGUI\" />"
+   ],
+   [
+    "<img src=\"https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&amp;logoColor=white\" alt=\"pandas\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"103\" height=\"20\" src=\"/assets/site/badge-pandas-2-0-2b-150458-62b2e0db.svg\" alt=\"pandas\" />"
+   ],
+   [
+    "<img src=\"https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikitlearn&amp;logoColor=white\" alt=\"scikit-learn\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"125\" height=\"20\" src=\"/assets/site/badge-scikit-learn-1-3-2b-f7931e-5a4eb9df.svg\" alt=\"scikit-learn\" />"
+   ],
+   [
+    "<img src=\"https://img.shields.io/badge/Matplotlib-3.8%2B-11557C?logo=python&amp;logoColor=white\" alt=\"Matplotlib\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"117\" height=\"20\" src=\"/assets/site/badge-matplotlib-3-8-2b-11557c-249c52ac.svg\" alt=\"Matplotlib\" />"
+   ],
+   [
+    "<img src=\"https://img.shields.io/badge/License-MIT-green\" alt=\"License\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"82\" height=\"20\" src=\"/assets/site/badge-license-mit-green-f99392a8.svg\" alt=\"License\" />"
+   ],
+   [
+    "<img src=\"/src/assets/main_view.png\" alt=\"The DataFusion main window with a loaded dataset\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"524\" src=\"/assets/site/src-assets-main-view-png-4ec18780.webp\" alt=\"The DataFusion main window with a loaded dataset\" />"
+   ],
+   [
+    "<img src=\"/src/assets/data_stats.png\" alt=\"Descriptive statistics for the loaded frame\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"523\" src=\"/assets/site/src-assets-data-stats-png-3ee9cbe3.webp\" alt=\"Descriptive statistics for the loaded frame\" />"
+   ],
+   [
+    "<img src=\"/src/assets/data_cleaning_transformation.png\" alt=\"Missing values, duplicates and encoding controls\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"525\" src=\"/assets/site/-assets-data-cleaning-transformation-png-18bda00f.webp\" alt=\"Missing values, duplicates and encoding controls\" />"
+   ],
+   [
+    "<img src=\"/src/assets/correlation_results.png\" alt=\"Pearson and Spearman side by side\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"481\" src=\"/assets/site/src-assets-correlation-results-png-dada6b63.webp\" alt=\"Pearson and Spearman side by side\" />"
+   ],
+   [
+    "<img src=\"/src/assets/data_visualizations.png\" alt=\"Histogram, box plot and the other chart types\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"520\" src=\"/assets/site/src-assets-data-visualizations-png-814e6bf5.webp\" alt=\"Histogram, box plot and the other chart types\" />"
+   ],
+   [
+    "<img src=\"/src/assets/scaling_results.png\" alt=\"Columns after standard and min-max scaling\" />",
+    "<img loading=\"lazy\" decoding=\"async\" width=\"760\" height=\"499\" src=\"/assets/site/src-assets-scaling-results-png-2bc39373.webp\" alt=\"Columns after standard and min-max scaling\" />"
+   ]
+  ]
+ }
+}
