@@ -56,6 +56,14 @@ Both live in `database/`, with their original `.names` and `.info` files, so the
 
 ---
 
+## 🎬 Demo
+
+<p align="center">
+  <img src="docs/readme/demo.webp" alt="DataFusion: a short scroll through the live site" width="80%">
+</p>
+
+---
+
 ## 🛠️ Technology Stack
 
 | Technology       | Version | Role                                                        |
